@@ -1,4 +1,3 @@
-import { NewService } from './services/new.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
