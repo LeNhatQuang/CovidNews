@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.country-item {
+    display: flex;
+    align-items: center;
+
+}
+
+.country-item img.flag-icon {
+    width: 18px;
+    margin-right: .5rem;
+}
+
+.p-dropdown {
+    width: 15rem;
+  }

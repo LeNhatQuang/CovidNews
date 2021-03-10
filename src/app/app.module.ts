@@ -1,8 +1,16 @@
+import { NewService } from './services/new.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { FormsModule } from '@angular/forms';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {DropdownModule} from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {TableModule} from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
+import {PaginatorModule} from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -10,9 +18,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    AccordionModule,
+    DropdownModule,
+    TableModule,
+    PaginatorModule
   ],
-  providers: [],
+  providers: [NewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
