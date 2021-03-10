@@ -1,32 +1,19 @@
 import { NewService } from './services/new.service';
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-
-import { FormsModule } from '@angular/forms';
-import { AccordionModule } from 'primeng/accordion';     //accordion and accordion tab
-import { DropdownModule } from 'primeng/dropdown';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TableModule } from 'primeng/table';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-import { PaginatorModule } from 'primeng/paginator';
 import { AppComponent } from './app.component';
 import { Country } from './models/country.model';
 import { of } from "rxjs";
+import { DropdownModule } from 'primeng/dropdown';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        BrowserModule,
         HttpClientModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        AccordionModule,
-        DropdownModule,
-        TableModule,
-        PaginatorModule
+        DropdownModule
       ],
       declarations: [
         AppComponent
@@ -74,7 +61,7 @@ describe('AppComponent', () => {
     httpClientSpy.get.and.returnValue(of(errorResponse));
   
     newService.getCountries().subscribe(
-      countries => fail('expected an error, not countries'),
+      countries => fail('expected an error'),
       error  => expect(error.message).toContain('test 404 error')
     );
   });
