@@ -26,7 +26,7 @@ import {PaginatorModule} from 'primeng/paginator';
     TableModule,
     PaginatorModule
   ],
-  providers: [NewService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

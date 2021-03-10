@@ -1,4 +1,8 @@
-<p-dropdown [options]="countries" [(ngModel)]="selectedCountry" (onChange)="onChange($event)" optionLabel="name" [filter]="true" filterBy="name"
+<div class="center-text">
+<h2>Covid news</h2>
+<h4>Which country do you want to see?</h4>
+
+<p-dropdown (onChange)="onChangeDropdown($event)" [options]="countries" [(ngModel)]="selectedCountry" optionLabel="Country" [filter]="true" filterBy="Country"
     [showClear]="true" placeholder="Select a Country">
     <ng-template pTemplate="selectedItem">
         <div class="country-item country-item-value" *ngIf="selectedCountry">
@@ -14,9 +18,12 @@
         </div>
     </ng-template>
 </p-dropdown>
+</div>
+
+<br>
 
 <p-table [value]="details" sortField="Date" [sortOrder]="-1" [paginator]="true" [rows]="10"
-    [rowsPerPageOptions]="[10,20,30]">
+    [rowsPerPageOptions]="[10,20,30]"  *ngIf="selectedCountry">
     <ng-template pTemplate="header">
         <tr>
             <th [pSortableColumn]="'Date'">Date
