@@ -22,6 +22,10 @@
 
 <br>
 
+<div  *ngIf="div_visible">
+    <p-progressBar  mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+</div>
+
 <p-table [value]="details" sortField="Date" [sortOrder]="-1" [paginator]="true" [rows]="10"
     [rowsPerPageOptions]="[10,20,30]"  *ngIf="selectedCountry">
     <ng-template pTemplate="header">

@@ -18,6 +18,8 @@ export class AppComponent {
 
   details: NewDetail[];
 
+  div_visible: boolean = false;
+
   constructor(private newService: NewService) {
     this.newService.getCountries().subscribe(response => {
       this.countries = response;
@@ -29,6 +31,11 @@ export class AppComponent {
 
   onChangeDropdown(event) {
     if (this.selectedCountry) {
+      this.div_visible = true;
+      setTimeout(() => {
+        this.div_visible = false;
+      }, 5000);
+
       this.newService.getAllStatusByCountry(this.selectedCountry).subscribe(response => {
         this.details = response;
       }, error => {

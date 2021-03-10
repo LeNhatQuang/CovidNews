@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import {PaginatorModule} from 'primeng/paginator';
+import {ProgressBarModule} from 'primeng/progressbar';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {PaginatorModule} from 'primeng/paginator';
     AccordionModule,
     DropdownModule,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    ProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
